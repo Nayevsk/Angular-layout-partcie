@@ -1,8 +1,23 @@
-<h3>List of countries</h3>
-<ul>
-  <li *ngFor="let country of countries" class="items">
-    <button>
-      <span>{{ country.name }}</span>
-    </button>
-  </li>
-</ul>
+<h3 class="infoheader">Countries</h3>
+<div class="main">  
+  <div>
+    <ul>
+      <li *ngFor="let country of countries" class="items">
+        <button (click)="onSelect(country)">
+          <span>{{ country.name }}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="selectedCountry">
+    <h1>Spoken Language:</h1>
+    <h4> {{selectedCountry.languages}}</h4>
+    <h1>Country Population:</h1>
+    <h4> {{selectedCountry.population}}</h4>
+    <h1>Country capital:</h1>
+    <h4> {{selectedCountry.capital}}</h4>
+    <h1>Country currency:</h1>
+    <h4> {{selectedCountry.currency}}</h4>
+  </div>
+</div>

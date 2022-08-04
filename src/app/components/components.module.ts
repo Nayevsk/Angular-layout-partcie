@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import { TopTenComponent } from './top-ten/top-ten.component';
 import { CountryFlagsComponent } from './country-flags/country-flags.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -15,7 +16,8 @@ import { CountryFlagsComponent } from './country-flags/country-flags.component';
     CountryFlagsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ],
   exports: [
     HomeComponent

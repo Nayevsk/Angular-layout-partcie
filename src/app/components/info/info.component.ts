@@ -10,8 +10,13 @@ import {country} from '../../mockdata/coutriesInterface';
 export class InfoComponent implements OnInit {
 
   countries = countriesDb
+  selectedCountry?: country;
 
   constructor() { }
+
+  onSelect(element:country): void{
+    this.selectedCountry = element
+  }
 
   ngOnInit(): void {
   }
