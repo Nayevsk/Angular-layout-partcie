@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { countriesDb } from '../mockdata/countiresDb';
+// import { countriesDb } from '../mockdata/countiresDb'; NOT USING MOCK DB ANYMORE
 import { country} from '../mockdata/coutriesInterface';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryDataService {
 
-  constructor() { }
+private countriesDbUrl = 'http://localhost:5000/countriesDb';
+
+  constructor(private http: HttpClient) { }
 
   getCountries() : Observable<country[]> {
-    const countries = of(countriesDb)
-    return countries;
+    return this.http.get<country[]>(this.countriesDbUrl)
   } 
 }
