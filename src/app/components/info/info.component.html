@@ -1,23 +1,21 @@
-<h3 class="infoheader">Countries</h3>
+<h1 class="infoheader">All Countries</h1>
 <div class="main">  
   <div>
     <ul>
       <li *ngFor="let country of countries" class="items">
-        <button (click)="onSelect(country)">
+        <button (click)="onSelect(country)" [class.animated-fill-button]="country === selectedCountry">
           <span>{{ country.name }}</span>
         </button>
       </li>
     </ul>
   </div>
 
-  <div *ngIf="selectedCountry">
-    <h1>Spoken Language:</h1>
-    <h4> {{selectedCountry.languages}}</h4>
-    <h1>Country Population:</h1>
-    <h4> {{selectedCountry.population}}</h4>
-    <h1>Country capital:</h1>
-    <h4> {{selectedCountry.capital}}</h4>
-    <h1>Country currency:</h1>
-    <h4> {{selectedCountry.currency}}</h4>
+  <div *ngIf="selectedCountry" class="country-info">
+    <h4 style="text-align:center">{{selectedCountry.name | uppercase}} Details: </h4>
+    <hr>
+    <h3>Spoken Language: <span class="item-details">{{selectedCountry.languages}}</span></h3>
+    <h3>Country Population: <span class="item-details">{{selectedCountry.population}}</span></h3>
+    <h3>Country capital: <span class="item-details">{{selectedCountry.capital}}</span></h3>
+    <h3>Country currency: <span class="item-details">{{selectedCountry.currency}}</span></h3>   
   </div>
 </div>
