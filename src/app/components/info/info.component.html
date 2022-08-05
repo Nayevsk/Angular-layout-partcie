@@ -2,6 +2,7 @@
 <div class="main">  
   <div>
     <ul>
+      <p style="text-align:center ;">Select a country in order to see the information:</p>
       <li *ngFor="let country of countries" class="items">
         <button (click)="onSelect(country)" [class.animated-fill-button]="country === selectedCountry">
           <span>{{ country.name }}</span>
@@ -18,4 +19,11 @@
     <h3>Country capital: <span class="item-details">{{selectedCountry.capital}}</span></h3>
     <h3>Country currency: <span class="item-details">{{selectedCountry.currency}}</span></h3>   
   </div>
+
+  <div *ngIf="selectedCountry" class="country-info">
+    <h4>Country Flag </h4>
+    <hr>
+    <img src="{{selectedCountry.flag}}" class="flags">
+  </div>
 </div>
+
