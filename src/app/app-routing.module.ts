@@ -7,8 +7,8 @@ import { TopTenComponent} from './components/top-ten/top-ten.component'
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
-  { path: 'Countries Info', component: InfoComponent },  
-  { path: 'Top 10', component: TopTenComponent }  
+  { path: 'Countries-Info', component: InfoComponent },  
+  { path: 'Top-10', component: TopTenComponent }  
 ];
 
 @NgModule({

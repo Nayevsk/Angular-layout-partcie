@@ -20,7 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule
   ],
   exports: [
-    HomeComponent
+    // HomeComponent , why to export this?
   ]
 })
 export class ComponentsModule { }

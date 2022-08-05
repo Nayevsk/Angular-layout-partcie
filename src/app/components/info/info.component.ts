@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {countriesDb} from '../../mockdata/countiresDb';
 import {country} from '../../mockdata/coutriesInterface';
 import {CountryDataService} from '../../services/country-data.service'
 
@@ -16,7 +15,7 @@ export class InfoComponent implements OnInit {
   constructor(private CountryData:CountryDataService) { }
 
   getCountries(): void{
-    this.countries = this.CountryData.getCountries();
+    this.CountryData.getCountries().subscribe( element => this.countries = element)
   }
 
   onSelect(element:country): void{
